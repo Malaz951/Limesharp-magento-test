@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="limesharp" translate="label" sortOrder="10">
+            <label>Limesharp</label>
+        </tab>
+        <section id="stock_data_updater" type="text" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Stock Data Updater</label>
+            <tab>limesharp</tab>
+            <resource>Limesharp_UpdateStockData::stock_data_updater</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="module_status" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable Stock Data Update Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="schedule" translate="label" type="text" sortOrder="10" showInDefault="1">
+                    <label>Cron Schedule</label>
+                    <comment>
+                        <![CDATA[By default, it will run every 10 minutes, to change this please follow this link.
+                        <a target="_blank" href="https://crontab.guru/">Guru crontab guide</a>]]>
+                    </comment>
+                    <depends>
+                        <field id="module_status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

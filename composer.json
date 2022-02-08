@@ -1,0 +1,38 @@
+{
+    "name": "limesharp/module-update-stock-data",
+    "type": "magento2-module",
+    "description": "Update stock data from an external csv file",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Limesharp"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "magento/framework": "^102.0|^103.0",
+        "magento/module-inventory": "*",
+        "magento/module-catalog-inventory": "*",
+        "magento/module-catalog": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Limesharp\\UpdateStockData\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
+
